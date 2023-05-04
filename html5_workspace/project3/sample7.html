@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES2015(ES6)에서는 아래와 같은 2가지의 블록(block)변수를 소개:
+        //(1) let 변수명 => 블록 내에서만 유효한 범위를 가지는 지역변수
+        //(2) const 변수명 => 블록 내에서만 유효한 범위를 가지는 지역변수이되, 상수를 만드는 키워드
+        //중괄호 블록 내에서 선언되지 않으면, 현재 html 문서 내에서 사용된다. (전역변수처럼 기능하지만, 전역변수는 아님.(지역.전역변수는 var에서 하는 개념))
+
+        let age = 23;
+        // const weight = 58.5;
+
+        if(age < 30) {
+            const weight = 58.5;
+            // weight = 59.5;      //상수변수의 값 변경 시도(XX)
+
+            let height = 172.5;
+            height = 178.0;
+
+            console.log(`1. 나이: ${age}, 몸무게: ${weight}, 키: ${height}`);
+        } //if
+
+        console.warn(`2.키: ${height}`);
+
+        //ES2015 Template String: Back Tic(`) 문자열이라고도 함.
+        //문자열 안에 바로 변수의 값을 출력시킬 수 있는 template 역할을 하는 문자열
+        console.log(`1. age: ${age}`);
+        console.log(`2. weight: ${weight}`);
+
+        function getGrade() {   //함수 정의
+            //var           //전역변수로 자동승급
+            kor = 95;       //지역변수: 함수 중괄호블록({}) 내에서 선언
+        } //getGrade
+
+        var kor = 100;      //전역 변수: 함수 중괄호블록({}) 밖에서 선언
+
+        getGrade();         //함수 호출
+
+        document.write('<!DOCTYPE html>');
+        document.write('kor: ', kor, "<br>"); //Rest Prameter라 + 말고 ,로 연결 가능
+    </script>
+</body>
+</html>

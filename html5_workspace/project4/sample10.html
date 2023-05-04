@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            console.clear();
+
+            //1. 자식선택자(>)를 이용
+            $("#wrap > h1").css("border", "2px dashed #f00");
+
+            //2. 자식 선택 메소드 이용
+            $("#wrap > section").children().  //<section> 태그의 모든 자식요소들
+                //jQuery.children(selector?: string): jQuery
+                css({   //복수개의 css 속성 선언은, 사용자배열 객체로 가능
+                    backgroundColor:"yellow",
+                    border: "2px solid #f00"
+                });
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+
+        <section>
+            <h1>자식 요소 선택자</h1>
+            <p>내용2</p>
+        </section>
+    </div>
+</body>
+</html>

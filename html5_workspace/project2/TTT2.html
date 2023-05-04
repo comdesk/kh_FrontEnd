@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 엘리먼트(요소) 선택자</title>
+
+    <style>
+        h2::first-letter {
+            color: green;
+            font-size: 3em;     /* 표준 폰트 크기: 16px (1em) */
+        }
+        p::first-line {
+            color: red;
+            font-size: 2em;
+            text-decoration: underline;
+        }
+        div::before {
+            content: '-BEFORE-';  /*태그에 없는 가상의 요소에 컨텐츠를 만들겠다.(태그가 변하는 게 아니라 스타일 상으로 집어넣는 것.)*/
+            display: block;
+            border: 5px solid purple;
+            box-sizing: border-box;
+            width: 200px;
+            height: 100px;
+
+            color: red;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        div::after {
+            content: '-AFTER-';
+            display: block;
+            border: 5px dotted violet;
+            box-sizing: border-box;
+            width: 200px;
+            height: 100px;
+
+            color: blue;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        input:focus {
+            color: white;
+            background-color: green;
+        }
+
+        input:checked {
+            border: 3px solid purple;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Lorem ipsum dolor sit.</h2>
+
+    <p>
+        1st. line <br>
+        2nd. line <br>
+        3rd. line
+    </p>
+
+    <div>
+        Lorem, ipsum dolor. 
+    </div>
+
+    <form action="">
+        Age: <input type="number" name="age" id="age">
+        <br>
+        isMale: <input type="checkbox" name="gender" id="gender">
+    </form>
+    
+</body>
+
+</html>

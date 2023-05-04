@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //새로이 생성한 요소노드에, "속성노드"를 추가하는 방법에 대해서 배우자
+        function add(){
+            var img = document.createElement('img');    //<img> 태그 생성
+
+            //<img> 태그에 새로운 속성노드 추가
+            // img.src = 'https://picsum.photos/600/400';
+            // img.width = 200;
+            // img.height = 200;
+
+            //Element.setAttribute(qualifiedName: string, value: string): void
+            img.setAttribute("src", "https://picsum.photos/600/500");
+            img.setAttribute("width", "200");
+            img.setAttribute("height", "200");
+
+            //기존의 DOM tree의 특정 요소 노드에 추가
+            document.body.appendChild(img);
+        } //add
+    </script>
+</head>
+<body>
+    <a href="#" onclick="add();">[이미지 추가]</a>
+
+    <!-- 이 부분에 새로운 이미지 태그를 만들어 넣자 -->
+</body>
+</html>

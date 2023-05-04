@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script defer>
+        var printMsg = function (msg) {     //익명 함수 선언
+            console.log(`익명함수: ${msg}`);
+        };  //익명함수를 변수에 저장
+
+        function printMsg(msg) {            //기본 함수 선언
+            console.log(`기본함수: ${msg}`);
+        }   //함수 선언
+
+        printMsg("호출되었습니다.");    //함수 호출
+    </script>
+    
+    <p>Lorem ipsum dolor sit amet.</p>
+</body>
+</html>

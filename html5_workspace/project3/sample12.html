@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var x, y;   //undefined
+
+        // for(let x=2; x<=5; x++) {
+        //     console.log(`---${x}단---`);
+
+        //     for(let y=1; y<=9; y++) {
+        //         console.log(`${x}*${y} = ${x*y}`);
+        //     } //inner for
+        // } //outer for
+
+        // ---
+
+        const arr = [1, 'Yoseph', true, 
+                    function add(num1, num2) {
+                        return num1 + num2;
+                    },
+                    [1,2,3],
+                    new Date()];
+
+        console.log(`typeof arr: ${typeof arr}`);
+        console.log(arr);
+        console.log(arr.length);
+
+        // ---
+        //Java의 enhanced for문은 JS에서는 해당되지 않음.
+        // for(var number : arr) {
+        //     console.log(number);
+        // } //enhanced for (xx)
+
+        //(1) for-of 문
+        for(let number of arr) {
+            console.log(number);
+        } //(for-of문, enhanced for of JS)
+
+        // ---
+        // (2) for-in문
+        for(let index in arr) {
+            console.log(index);
+        } //for-in (enhanced for)
+
+        // ---
+
+        console.clear();
+        // arr.forEach(function traverse(element) {
+        //     console.debug(`>>> traverse(${element}) invoked.`);
+        //     console.log(element);
+        // });
+
+        //Arrow Function 생략문법
+        // arr.forEach(el => console.log(el));
+        
+        //메소드 참조
+        arr.forEach(console.log);
+
+        arr.forEach((element, index, ar) => console.log(element, index, ar));
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES2015 표준화되기 전까지는, JS의 변수는 크게 "전역"과 "지역"변수로 나눠짐.
+        //var 키워드를 사용하지 않고 선언된 변수는 자동으로 전역변수로 승급된다(***)
+        stdName = "홍길동";     //var 키워드 생략
+        comGrade = 96;
+
+        stdName;        //변수명 재선언(***)
+        comGrade;
+
+        console.log("1. 학생이름: " + stdName);
+        console.log("2. 컴퓨터점수: " + comGrade);
+    </script>
+</body>
+</html>

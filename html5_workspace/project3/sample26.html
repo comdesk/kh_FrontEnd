@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //User-defined Object: "객체 리터럴 방식"
+        var car = {
+            // 속성명1 : 속성값1,
+            // ...
+            // 속성명n : 속성값n,
+
+            //필드(속성)
+            name: "Sonata",
+            speed: 100,
+            color: "White",
+            door: 4,
+
+            //메소드
+            start: function start() {
+                console.log("this: ", this);
+
+                return this.speed + 10;
+                // return speed + 10;       //xx
+            },
+
+            //객체의 메소드 선언 시에는, 함수 표현식을 사용할 것!(화살표 함수는 사용하지 말것!)
+            stop: () => {
+                console.log("this: ", this);
+                this.speed = 0;
+            }
+        };  //User-defined Object
+    </script>
+</body>
+
+</html>

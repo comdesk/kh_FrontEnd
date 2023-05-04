@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //E.target: window
+        //E.type: load
+        //E.listener: onload
+        //E.handler: Anonymous function
+
+        window.onload = function () {
+            console.clear();
+
+            //1. XHR(XMLHttpRequest)를 이용한 동기식 요청 처리
+
+            //Step.1 new 연산자와 XHR 생성자함수를 이용한 XHR 객체 생성
+
+            let xhr = new XMLHttpRequest();
+
+            console.log('1. xhr:', xhr);
+
+            //XHR 객체는 생명주기(Lifecycle)를 가지고 있고, 주기별 상태값(readyState)이 변함
+            console.log('2. resadyState:', xhr.readyState);
+
+            //Step2. (method) XMLHttpRequest.open(      //커넥션
+            //      method: string,     //HTTP method: GET, POST
+            //      url: string,        //action URL
+            //      async: boolean,     //동기식/비동기식 결정
+            //      username?: string,  //HTTP basic 인증을 위한 아이디
+            //      password?: string   //암호    
+            //      ); void
+
+            //동기식, GET방식, 요청을 보내는 URL 주소 지정
+            //xhr.open('GET', 'http://localhost:8080/doc/members.json?name=Yoseph&age=23', false);
+            //xhr.open('POST', 'http://localhost:8080/doc/members.json', true);
+
+            xhr.open('GET', 'doc/members.json', false); //동기식으로 요청을 보냄
+            //같은 서버라 URL이 없음.
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');  //폼태그에서 submit버튼 눌렀을 때 컨텐츠 타입 
+            //=> 양식에서 보낸 데이터와 동일하다고 기재
+
+            console.log('3. xhr:', xhr);
+            console.log('4. resadyState:', xhr.readyState);
+
+            //----------------------------------------------//
+            // Step.3 (method) XMLHttpRequest.send(
+            //      body?: Document | BodyInit
+            //    ): void
+            //----------------------------------------------//
+            // xhr.send('name=Yoseph&age=23');
+            //실제 요청 보냄.
+            xhr.send();
+            console.log('4. xhr:', xhr);
+            console.log('5. resadyState:', xhr.readyState);
+
+            //Step. 4 XHR로 보낸 요청과 그 응답 데이터를 이용해서, 
+            //현재 문서의 <body>태그의 컨텐츠로 지정
+            document.body.innerHTML = xhr.responseText; //응답데이터
+            //응답을 받았을 때 이미 라이프사이클 끝남.
+        }; //onload
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

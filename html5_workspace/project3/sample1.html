@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 예제</title>
+
+    <script>
+        var num = 0;
+
+        //1. 웹브라우저의 개발자도구의 "Console" 탭에 출력
+        console.log('1. num: ', num)
+
+        //2. 웹브라우저의 viewport에 문자열을 그대로 출력
+        document.write("head 태그 내 실행 순서: " + num + "<br>");
+    </script>
+    
+    <script>
+        var num = 1;
+
+        console.log('2. num: ', num)
+        document.write("head 태그 내 실행 순서: " + num + "<br/>");
+    </script>
+</head>
+<body>
+    <script>
+        var num = 2;
+
+        console.log('3. num: ', num)
+        document.write("body 태그 내 실행 순서: " + num + "<br/>");
+    </script>
+
+    <script>
+        var num = 3;
+
+        console.log('4. num: ', num)
+        document.write("body 태그 내 실행 순서: " + num + "<br/>");
+    </script>
+</body>
+</html>

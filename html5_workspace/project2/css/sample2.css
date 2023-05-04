@@ -1,0 +1,7 @@
+/* css 룰 */
+@charset "utf-8";
+
+p {
+    color: green;
+    background-color: yellow;
+}

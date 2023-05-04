@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add() {
+            // console.clear();                    //1. 콘솔창 clear
+            console.group('Yoseph');               //2. 그룹로그생성준비 add: 그룹로그 이름
+            console.debug(`add() invoked.`);    //3. 개별로그 출력(호출로그)
+
+            let i, sum = 0;
+
+            //arguments: 함수블록 내부에서만 사용가능한 키워드로, 곧 (Array-like) 배열객체
+            //함수 호출자가 전달한 모든 "전달인자값들"을 원소로 가지는 배열 객체임.
+            
+            console.log('\t+ arguments:', arguments);
+            for(i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            } //for
+
+            console.log(`수행 결과: ${sum}`);   //4. 개별로그 출력
+            console.groupEnd();                 //5. 그룹로그 종료
+        } //add
+        
+        function add2(...rest) {        //arguments 쓰지말고 rest parameter 사용
+            console.group('Yoseph');               //2. 그룹로그생성준비 add: 그룹로그 이름
+            console.debug(`add() invoked.`);    //3. 개별로그 출력(호출로그)
+
+            let i, sum = 0;
+
+            //arguments: 함수블록 내부에서만 사용가능한 키워드로, 곧 (Array-like) 배열객체
+            //함수 호출자가 전달한 모든 "전달인자값들"을 원소로 가지는 배열 객체임.
+            
+            console.log('\t+ rest:', rest);
+            // rest.forEach(val =>sum += val);
+            rest.forEach(function callbackfn(value) {
+                sum += value;
+            });
+           
+            console.log(`수행 결과: ${sum}`);   //4. 개별로그 출력
+            console.groupEnd();                 //5. 그룹로그 종료
+        } //add2
+
+        // ----------------
+        add2();
+        add2(2);
+        add2(2, 3);
+        add2(2, 3, 4);
+        add2(4, 5, 6, 7, 8);
+        add2(1,2,3,4,5,6,7,8,9,10);
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            console.clear();
+
+            //키보드에서 어느 특정 키를 손가락으로 누른 상태에서 발생하는 이벤트
+            //아직 손가락은 키에서 떼지 않은 상태임.
+            $(document).on("keydown", callback);
+
+            //E.handler function 선언 (1급 객체임을 잊지 말자)
+            function callback(e) {
+                let direct = "";
+
+                //Event 객체의 필드로 사용자가 입력한 키코드값을 저장하고
+                //있는 필드가 바로 'keyCode'임.
+
+                switch (e.keyCode) {
+                    case 37:
+                        direct = "LEFT";
+                        break;
+                    case 38:
+                        direct = "TOP";
+                        break;
+                    case 39:
+                        direct = "RIGHT";
+                        break;
+                    case 40:
+                        direct = "BOTTOM";
+                        break;
+                    
+                    default:
+                        break;
+                }   //switch
+
+                if(direct) {    //<input> 태그에 사용자가 입력한 값을 획득/설정하는 방법
+                    $("#user_id").val(direct);
+                } //if
+
+                console.log(e);
+
+                //시스템 키가 눌렸는가? 체크
+                $(".shift").text(e.shiftKey);
+                $(".ctrl").text(e.ctrlKey);
+                $(".alt").text(e.altKey);
+            } //callback
+        }); 
+    </script>
+</head>
+<body>
+    <p>
+        <input type="text" name="user_id" id="user_id"><br>
+        1. SHIFT KEY : <span class="shift"></span><br>
+        2. CTRL KEY : <span class="ctrl"></span><br>
+        3. ALT KEY : <span class="alt"></span><br>
+    </p>
+</body>
+</html>

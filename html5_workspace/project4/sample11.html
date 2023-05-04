@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(() => {
+            let style_1 = {
+                backgroundColor: "#0ff",
+                border: "2px solid #f00"
+            };
+
+            let style_2 = {
+                backgroundColor: "#ff0",
+                border: "2px dashed #f00"
+            };
+
+            //prev(): 선택한 요소의 바로 이전(바로 윗 형 요소 노드) 선택
+            $(".txt").prev().css(style_1);
+
+            $(".txt + p").css(style_2); //css3: 일반형제 선택자
+
+            //next(): 선택한 요소의 다음(바로 동생요소노드) 선택
+            $(".txt").next().next().css(style_2);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt">내용2</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+</body>
+
+</html>

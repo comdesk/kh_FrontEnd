@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "first_name": "Ashil",
+        "last_name": "O'Hear",
+        "email": "aohear0@washington.edu",
+        "gender": "Female"
+    },
+    {
+        "id": 2,
+        "first_name": "Cleavland",
+        "last_name": "Attwooll",
+        "email": "cattwooll1@amazon.co.uk",
+        "gender": "Male"
+    },
+    {
+        "id": 3,
+        "first_name": "Ashlen",
+        "last_name": "Bragge",
+        "email": "abragge2@alibaba.com",
+        "gender": "Female"
+    },
+    {
+        "id": 4,
+        "first_name": "Nickie",
+        "last_name": "Mussen",
+        "email": "nmussen3@last.fm",
+        "gender": "Male"
+    },
+    {
+        "id": 5,
+        "first_name": "Benson",
+        "last_name": "Brooker",
+        "email": "bbrooker4@diigo.com",
+        "gender": "Male"
+    },
+    {
+        "id": 6,
+        "first_name": "Der",
+        "last_name": "Tripp",
+        "email": "dtripp5@topsy.com",
+        "gender": "Male"
+    },
+    {
+        "id": 7,
+        "first_name": "Benni",
+        "last_name": "Di Iorio",
+        "email": "bdiiorio6@networkadvertising.org",
+        "gender": "Genderfluid"
+    },
+    {
+        "id": 8,
+        "first_name": "Linn",
+        "last_name": "Jemmett",
+        "email": "ljemmett7@columbia.edu",
+        "gender": "Male"
+    },
+    {
+        "id": 9,
+        "first_name": "Dorita",
+        "last_name": "Chesney",
+        "email": "dchesney8@deliciousdays.com",
+        "gender": "Female"
+    },
+    {
+        "id": 10,
+        "first_name": "Richy",
+        "last_name": "Benneyworth",
+        "email": "rbenneyworth9@mysql.com",
+        "gender": "Bigender"
+    }
+]

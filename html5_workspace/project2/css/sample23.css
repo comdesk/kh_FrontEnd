@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+p {
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+    font-size: 16pt;
+}
+p.c1 {
+    width: 700px;
+    height: 80px;
+
+    color: green;
+}
+p.c2 {
+    width: 100%;
+    height: 150%;
+
+    color: purple;
+}
+p.c3 {
+    width: 10cm;
+    height: 3cm;
+
+    color: blue;
+}

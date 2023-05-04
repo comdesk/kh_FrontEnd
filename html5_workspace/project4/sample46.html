@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        //** 라이브(Live) 이벤트 등록 **
+        //라이브 이벤트란, 현재 등록한 이벤트(들)이 발생할 조건이 안되지만,
+        //미래시점에 이벤트(들) 발생조건을 만족시키면, 
+        //그때 이벤트가 처리될 수 있는 이벤트(들) 의미
+        $(function () {
+           console.clear();
+           
+           //1. 첫 번째 방법: 위임 방식의 이벤트 핸들러 등록
+           //.delegate(**selector**, events, handler)
+           //   selector: any, 
+           //   eventType: string, 
+           //   handler: (eventObject: JQueryEventObject) => any): JQuery
+           $(".btn_wrap").delegate(".btn_1.on", "mouseover focus", function () {
+                alert("HELLO!");
+           }); //delegate
+
+        //    $(".btn_1").addClass("on");  //동적으로 class 속성값(on) 추가
+
+           //2. 두 번째 방법: 역시 위임방식의 그룹이벤트 핸들러 등록이나, 1회성 처리
+           //.one(events, **selector**, handler)
+           $(document).one("mouseover focus", ".btn_2.on", function () {
+                alert("WELCOME!");
+           });  //one
+
+        //    $(".btn_2").addClass("on");  //동적으로 class 속성값(on) 추가
+
+        }); //.jq
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <p class="btn_wrap"><button class="btn_1">버튼1</button></p>
+        <p>                 <button class="btn_2">버튼2</button></p>
+    </div>
+</body>
+
+</html>

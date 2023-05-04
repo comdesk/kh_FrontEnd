@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            color: white;
+        }
+
+        h2::first-letter {
+            font-size: 30px;
+            color: red;
+            text-transform: uppercase;
+        }
+
+        h3::first-line {
+            color: blue;
+        }
+        
+        input:focus {
+            background-color: rgb(228, 171, 66);
+        }
+
+        input:checked+div.d1 {
+            background-color: gray;
+        }
+
+        input:checked+div.d2 {
+            background-color: rgb(216, 71, 71);
+        }
+
+        h1::before {
+            content: '';
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+            border: 5px outset gold;
+            border-radius: 50%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>UI 입력 요소의 상테에 따른 가상 클래스 선택자</h2>
+
+    <!-- 문제1 -->
+
+    <h3>문제) 대한민국 수도는?</h3>
+    <p>정답 작성: <input type="text"></p>
+
+    <h2>Answer</h2>
+    힌트 보기:
+
+    <input type="checkbox">
+    <div class="d1">
+        남대문이 있는 곳이죠.
+    </div>
+
+    정답 보기: 
+
+    <input type="checkbox">
+    <div class="d2">
+        서울
+    </div>
+
+    <p></p>
+
+    <h1>가상 엘리먼트 선택자</h1>
+</body>
+
+</html>

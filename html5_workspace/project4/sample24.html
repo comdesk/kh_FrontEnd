@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+           console.clear();
+           
+           //리터럴 객체를 원소로 가지는 배열 생성
+           const arr1 = [
+                        {
+                            area: "서울",
+                            name: "무대리"
+                        }, {
+                            area: "부산",
+                            name: "홍과장"
+                        }, {
+                            area: "대전",
+                            name: "박사장"
+                        }, {
+                            area: "서울",
+                            name: "빅마마"
+                        }];
+
+            //mapping 결과로 나온 새로운 배열을 let 변수에 저장
+            //사상작업: 배열 안의 객체 중에, 사는지역이 서울인 사람객체만 새로운 배열에
+            // const arr2 = $.map(arr1, function (value, index) {     // e, i로 보통 함.
+            //     //기존 배열에서 지역이 서울인 원소만 추출해서 이 원소들로 구성된 새로운 배열을
+            //     //생성
+            //     if(value.area == "서울") {
+            //         return value;
+            //     } //if
+                
+            //     //$.map 메소드는 제공한 배열의 원소를 "가공"해서 이 가공된 값을 반환하면,
+            //     //이 반환된 값을 원소로 가지는 새로운 배열을 만들어 주는 게 목적
+            //     // return e.name;  //객체 => string
+            // }); //$.map
+
+            // console.log("1. arr2", arr2);
+
+            // =========================
+            //$.grep() 메소드: filtering 수행
+            const arr3 = $.grep(arr1, (value, index) => {
+                if(value.area == "서울") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }); //$.grep
+
+            console.log("2. arr3: ", arr3);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

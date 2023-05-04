@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            console.clear();
+
+            //문법: JQuery.closest(select: string): JQuery
+            //closest(selector?): 선택한 요소노드의 모든 부모노드 중에,
+            //지정한 가장 가까운 부모노드를 선택하라
+            $(".txt1").closest("div").css({border: "2px solid #f00"});
+        }); //.jq
+    </script>
+</head>
+<body>
+    <h1 class="title">선택자</h1>
+    <div>
+        <div>
+            <p>
+                <p class="txt1">내용</p>
+            </p>            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+body {
+    /* 웹브라우저의 Viewport 세로 영역의 길이를 엄청 길게 만듦
+    이로써, 세로 스크롤바가 생기도록 임의로 길이를 늘림 */
+    height: 3000px;
+}
+.p {
+    /* box-sizing: content-box; */
+    width: 300px;
+    height: 50px;
+    border: 3px solid red;
+
+    /* position: static; - default static*/
+
+    background-color: yellow;
+}
+.fp {
+    width: 100vw;
+    /* height: 100px; */
+    border: 1px solid purple;
+    padding: 5px;
+
+    /* 고정 위치 설정 fixed == absolute + no-scroll*/
+    position: sticky;
+    /* 위치 속성으로 위치 지정 */
+    /* right: 5px; */
+    top: 1px;
+
+    background-color: lightgreen;
+}

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "2. lecture",
+			"path": "../../../Users/user1/Desktop/2. lecture"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../Users/user1/Downloads/final"
+		}
+	],
+	"settings": {
+		"editor.fontFamily": "D2Coding, Consolas, 'Courier New', monospace",
+		"editor.fontSize": 16,
+		"liveServer.settings.multiRootWorkspaceName": "html5_workspace"
+	}
+}

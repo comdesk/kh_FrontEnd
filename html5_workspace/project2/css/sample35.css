@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+div {
+    border: 3px solid rgb(127, 196, 127);
+}
+.img1 {
+    float: right;
+}
+.fix {
+    overflow: auto;
+}
+.img2 {
+    float: right;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <script>
+        var text1 = "함수 선언 전 호출";
+        var text2 = "함수 선언 후 호출";
+
+        // ==============
+
+        printMsg(text1);    //2. 함수 선언 전 호출(***)
+
+        // ===============
+
+        function printMsg(msg) {    //1. 함수 선언
+            //ES6: Template String(ex.`name:${변수이름}`)
+            console.debug(`printMsg(${msg}) invoked.`);
+
+            document.write('<!DOCTYPE html>');
+            document.write(`함수 호출 메시지: ${msg} <br>`);
+        } //printMsg
+
+        // =================
+
+        printMsg(text2);    //2. 함수 선언 후 호출
+
+        console.log(`msg: ${msg}`);
+    </script>
+</body>
+</html>

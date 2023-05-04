@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+            console.clear();
+            console.group();
+          
+            //1. XHR(XMLHttpRequest)를 이용한 비동기식 요청 처리
+
+            //Step.1 new 연산자와 XHR 생성자함수를 이용한 XHR 객체 생성
+
+            let xhr = new XMLHttpRequest();
+
+            console.log('1. xhr:', xhr);
+
+            // Step2. onreadystatechange 이벤트 핸들러 설정
+            // (property) XMLHttpRequest.onreadystatechange:
+            //                     (this: XMLHttpRequest, ev: Event) => any
+
+            xhr.onreadystatechange = function () {
+                console.log('2. onreadystatechange:', xhr.readyState);
+
+                if(xhr.readyState == 4) {   //응답완료상태에서..
+                    //HTTP status 코드를 검사하여, 정상응답(200)인 경우에만
+                    //응답 데이터(xhr.responseText)를 사용
+                    if(xhr.status == 200) {  //HTTP status code
+                        document.body.innerHTML = xhr.responseText;
+
+                        //JSON.stringify: JS Object → Json string으로 변환
+                        //JSON.parse: JSON String-> JS Object로 변환
+                        var arr = JSON.parse(xhr.responseText);
+                        console.log(arr);
+
+                        if(arr.length > 0) {
+                            var person = arr[0];
+
+                            console.log('\t1. id:', person.id);
+                            console.log('\t2. first_name:', person.first_name);
+                            console.log('\t3. last_name:', person.last_name);
+                            console.log('\t4. email:', person.email);
+                            console.log('\t5. gender:', person.gender);                         
+                        }   //if(array.length)
+                    }   //if(status==200)
+                }   //if(readyState==4)
+            };  //onreadystatechange
+
+            //----------------------------------------------//
+            // XMLHttpRequest.open(method, url, async): void
+            //----------------------------------------------//
+            // xhr.open('GET', 'doc/members.json', false);  //동기식
+            xhr.open('GET', 'doc/members.json', true);  //비동기식
+
+            // 필요시, 아래의 메소드를 통해, HTTP Request 의 헤더영역에,
+            // 새로운 헤더 추가 또는 기존 헤더의 값 변경
+            // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            //----------------------------------------------//
+            // XHR.send(body?: Document | BodyInit): void
+            //----------------------------------------------//
+            xhr.send();
+
+
+            console.groupEnd();
+        };  //onload
+
+        
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

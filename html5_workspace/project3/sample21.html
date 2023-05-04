@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //자바스크립트에서는, 아래 함수 선언들을 보면, 동일이름의 매개변수만 틀린
+        //함수 오버로딩을 지원하는 것처럼 보이지만, 실상은 지원하지 않고,
+        //가장 마지막에 선언된 동일이름의 함수가 최종 함수가 됨.
+
+        function add() {
+            console.debug(`1. add() invoked.`);
+            
+            var sum = 1;
+            return sum;
+        } //add
+
+        function add(x) {
+            console.debug(`2. add(${x}) invoked.`);
+            
+            var sum = x + 1;
+            return sum;
+        } //add
+
+        function add(x, y) {
+            console.debug(`3. add(${x}, ${y}) invoked.`);
+            
+            var sum = x + y;
+            return sum;
+        } //add
+
+        function add(x, y, z) { //가장 마지막에 선언된 동일이름의 함수만이 살아남음
+            console.debug(`4. add(${x}, ${y}, ${z}) invoked.`);
+            
+            console.log('\t+ arguments:', arguments);   //arguments 객체 찍기
+            
+            let sum = 0;
+            for(let arg of arguments) {
+                sum += arg;
+            } //for-of
+
+            // var sum = x + y + z;
+            return sum;
+        } //add
+
+        //** NaN: Not a Number(숫자로 표현할 수 없는 상태)
+
+        var r0 = add();     //1. 매개변수가 없음.
+        console.log(`\t+ 함수 호출 인자 없음: ${r0}`);
+
+        var r1 = add(1);    //매개변수보다 인자개수 부족
+        console.log(`\t+ 함수 호출 인자 부족: ${r1}`);
+
+        var r2 = add(2, 3); //매개변수보다 인자개수 부족
+        console.log(`\t+ 함수 호출 인자 부족: ${r2}`);
+
+        var r3 = add(4, 5, 6);  //매개변수와 동일한 개수의 인자
+        console.log(`\t+ 정상적인 함수 호출: ${r3}`);
+
+        var r4 = add(7, 8, 9, 10);  //매개변수보다 인자값이 더 많음
+        console.log(`\t+ 7, 8, 9만 인자값으로 적용: ${r4}`);
+    </script>
+</body>
+</html>

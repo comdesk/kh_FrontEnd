@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* text란 속성을 가진 모든 P 태그를 선택하라! */
+        p[text] {
+            color: red;
+        }
+        
+        /* text 속성과 그 값으로 "red" 문자열을 가지는 모든 P태그를 선택하라 */
+        p[text="red"] {
+            color: yellow;
+            background-color: purple;
+        }
+
+        /* text 속성과 그 값으로 틸드('~')와 함께 나오면, 지정된 속성값을 가지는 목록을 소유한 모든 P태그를 선택하라 
+        ex: <p text="v1 v2 v3" ...>*/
+        p[text~="bb"] {
+            color: yellow;
+            background-color: green;
+        }
+
+        /* text란 속성을 가지고, 그 속성값으로 지정된 값을 가진 모든 P 태그를 선택하거나, 지정된 값으로 시작하고 하이픈('-')기호로 이어진 속성값을 가진 모든 P태그를 선택하라 
+        예: <p text="a1"> OR <p text="a1-b1-c2">*/
+        p[text|="a1"] {
+            color: aquamarine;
+            background-color: blue;
+        } 
+
+        /* P태그이면서, text란 속성을 가지고, 지정된 속성값으로 시작하는 모든 P 태그를 선택하라 
+        ex: <p text="img로만 시작하면OK">*/
+        p[text^="img"] {
+            color: yellow;
+            background-color: red;
+        }
+
+        /* P태그이면서 text란 이름의 속성을 가지고 속성의 값이 끝에 지정된 값으로 끝나는 모든 P태그를 선택하라(앞은 안 나와도 됨)
+        예: <p text="XXXX.png"> */
+        p[text$=".png"] {
+            color: yellow;
+            background-color: gray;
+        }
+
+        /* p태그이면서 text란 이름의 속성을 가지고, 속성의 값이 지정된 문자열을 포함하고 있는 모든 P태그를 선택하라
+        예: <p text="XXXongYYY"> */
+        p[text*="ong"] {
+            color: bisque;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <p text="hello">모든 텍스트</p>
+    <p text="red">텍스트 매칭 속성</p>
+    <p text="aa bb cc">리스트 매칭 속성</p>
+    <p text="a1-a2-a3">범위 텍스트 매칭 속성</p>
+    <p text="img/pic.jpg">텍스트 시작 매칭 속성</p>
+    <p text="img/pic.png">텍스트 끝 매칭 속성</p>
+    <p text="Seongyong Hong">텍스트 패턴 매칭 속성</p>
+    <p text="bb">HI</p>
+</body>
+
+</html>

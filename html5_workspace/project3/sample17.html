@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script defer>
+        function printMsg(name, age) {
+            console.debug(`printMsg(${name}, ${age}) invoked.`);
+
+            document.write('<!DOCTYPE html>');
+            document.write(`학생 이름: <b> ${name} </b><br>`);
+            document.write(`학생 이름: <b> ${age} </b><br>`);
+        }
+
+        console.log('>>> printMsg:', printMsg);
+    </script>
+
+    <button type="button" onclick="printMsg('홍길동', 21);">학생정보</button>
+
+    <p onclick="alert('저를 클릭하셨네요!?');">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+</body>
+
+</html>

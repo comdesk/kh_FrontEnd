@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline-block</title>
+    
+    <style>
+        /* CSS RESET */
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+        body {
+            height: 10000px;
+        }
+        ul>li {
+            box-sizing: content-box;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+
+            text-align: center;
+            line-height: 30px;
+            font-family: D2Coding;
+            font-size: .9rem;
+
+            list-style-type: none;
+            color: white;
+            background-color: burlywood;
+            cursor: pointer;
+        }
+        #container {
+            background-color: silver;
+            position: sticky;
+            top: 1px;
+            text-align: center;
+        }
+        div#gallery {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LOGO</h1>
+    
+    <div id="container">
+        <ul>
+            <li>MENU1</li>
+            <li>MENU2</li>
+            <li>MENU3</li>
+            <li>MENU4</li>
+            <li>MENU5</li>
+        </ul>  
+    </div>
+    <div id="gallery">
+        <img src="https://picsum.photos/id/100/100/100">
+        <img src="https://picsum.photos/id/100/100/100">
+        <img src="https://picsum.photos/id/100/100/100">
+        <img src="https://picsum.photos/id/100/100/100">
+        <img src="https://picsum.photos/id/100/100/100">
+        <img src="https://picsum.photos/id/100/100/100">
+        
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 조합 선택자 - 후손선택자(공백) */
+        div ul {
+            color: red;
+        }
+
+        div h2 {
+            color: yellow;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Descendant Selcetor 1</h2>
+
+        <ul>후손 선택자
+            <li>자식의 자식 (후손1)</li>
+            <li>자식의 자식 (후손1)</li>
+        </ul>
+    </div>
+
+    <h2>Descendant Selcetor 2</h2>
+</body>
+</html>

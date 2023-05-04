@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        var arr;
+
+        function sleep(millis) {
+            let dt = new Date();
+
+            while((new Date() - dt) <= millis);
+        }
+
+        $(function () {
+            console.clear();
+            
+            sleep(1000*5);  //현재 스레드의 수행을 5초 동안 대기
+
+            //$.ajax() 제이쿼리 메소드로, 상세하게 비동기호출 수행하고
+            //비동기로 받아온 데이터를 이용해서 현재 문서의 DOM tree에 반영하자
+            $.ajax({
+                url: "data/members.json",
+                // url: "http://localhost:8080/members.json",  //톰캣 서버에서 가져옴.
+                dataType: "json",
+                success: function (data) {
+                    console.debug('success(data) invoked.');
+                    console.log(typeof data, data.constructor.prototype);
+
+                    arr = data; //전역변수에 수신 데이터(JSON) 임시 저장
+
+                    if(data.length > 0) {   //회원정보가 1명 이상 있다면
+                        let tbl = $("<table>"); //새로운 <table> 요소 노드 생성
+
+                        tbl.attr('border', '1').css({
+                            border: "1px sold black",
+                            borderCollapse: "collapse"
+                        });
+
+                        // 과제: JSON 배열의 원소를 순회하는 방법으로
+                        // 제이쿼리의 배열순회 메소드로 대체하시오
+                        for(let member of data) {
+                            let tr = $("<tr>").append(  //제이쿼리 객체가 append 된다.(css가 제이쿼리 객체 반환)
+                                $("<td>").text(member.id).css('padding-left', '10px'),
+                                $("<td>").text(member.first_name).css('padding-left', '10px'),
+                                $("<td>").text(member.last_name).css('padding-left', '10px'),
+                                $("<td>").text(member.email).css('padding-left', '10px'),
+                                $("<td>").text(member.gender).css('padding-left', '10px')
+                            )   //.append
+                            
+                            tbl.append(tr);
+                        } //enhanced for-of
+                        $(".container").append(tbl);
+                    }
+                }
+            }); //ajax
+        }); //.jq
+    </script>
+</head>
+
+<body>
+    <h1>jqery_ajax</h1>
+
+    <hr>
+
+    <div class="container"></div>
+</body>
+
+</html>

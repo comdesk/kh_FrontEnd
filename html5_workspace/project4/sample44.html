@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(() => {
+            console.clear();
+
+            //1. on(eventType, eventHandler) 메소드로 단독이벤트 핸들러 등록
+            $(".link1").on("click", function (e) {
+               console.debug('onclicked on link1 ...');
+
+               //onlcick 이벤트의 기본동작을 제거(무력화) #1
+            //    e.preventDefault();
+
+               $(".txt1").css({backgroundColor: "#ff0"});
+
+               //onlcick 이벤트의 기본동작을 제거(무력화) #2
+               return false;
+            }); //onclick
+
+            //2. on(eventType, eventHandler) 메소드로 단독이벤트 핸들러 등록
+            $(".link2").on("click", function () {
+               console.debug('onclicked on btn2 ...');
+
+               $(".txt2").css({backgroundColor: "#0ff"});
+            }); //onclick
+
+            //3. on(eventType, eventHandler) 메소드로 단독이벤트 핸들러 등록
+            $(".btn3").on("dblclick", function () {
+                console.debug('dblclick on btn3...');
+
+                $(".txt3").css({backgroundColor: "#0f0"});
+            }); //ondbclick
+        });
+    </script>
+</head>
+
+<body>
+    <p><a href="http://www.naver.com" class="link1">NAVER</a></p>
+    <p class="txt1">내용1</p>
+
+    <p><a href="http://www.daum.net" class="link2">DAUM</a></p>
+    <p class="txt2">내용2</p>
+
+    <p><button class="btn3">버튼3</button></p>
+    <p class="txt3">내용3</p>
+</body>
+
+</html>

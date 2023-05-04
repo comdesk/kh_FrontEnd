@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 조합선택자 - 인접형제(Adjacent Sibling) 선택자 */
+/* #list1 { */
+    h1 + h2 + ul {
+        color: blue;
+    }
+    div + h3 {
+        color: red;
+    }
+    h3 + p {
+        color: purple;
+        background-color: yellow;
+    }

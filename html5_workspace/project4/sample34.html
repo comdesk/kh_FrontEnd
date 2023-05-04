@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <style>
+        * { /*CSS reset*/ 
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            line-height: 1;
+        }
+        #wrap {
+            height: 5000px;
+            padding-top: 2000px;
+            border: 3px solid purple;
+        }
+        h1 {
+            border: 2px dotted red;
+
+            position: fixed;
+            top: 0;
+        }
+    </style>
+
+    <script>
+        $(() => {
+            console.clear();
+
+            //1. 뷰포트를 기준으로 h1 태그의 상단 위치값 획득
+            var topNum = $("h1").offset().top;
+            console.log(`1.topNum: ${topNum}`);
+
+            //2. 최상위 객체인 window 객체의 메소드인 
+            //scrollTop(스크롤위치값)으로 수직 스크롤바의 위치를 조절
+            $(window).scrollTop(topNum);
+
+            //3. 현재 수직 스크롤바의 위치값 획득
+            var sctPosition = $(window).scrollTop();
+            console.log(`2. sctPosition: ${sctPosition}`);
+        }); //.jq
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>위치 메서드</h1>
+    </div>
+</body>
+</html>

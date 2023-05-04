@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 3px solid plum;
+        }
+    </style>
+
+    <script>
+
+        var globalEvent;    //함수블록 안에 선언된 이벤트 객체 변수는 지역변수라 전역변수에 담아줌.
+
+        $(function () {
+           console.clear();
+           
+           //"싱글" 이벤트 등록
+           $(".btn1").click(function (e) {
+                console.debug('onclick ...', e);
+                globalEvent = e;
+
+                // $(".btn1").parent().next().css({"color": "#ff0"});
+                $(e.currentTarget).parent().next().css({"color": "#ff0"});
+            // console.debug(e);
+            // console.debug('\t+ e.currentTarget:', e.currentTarget);
+           });  //onclick
+
+        //    ---
+
+           //단독 이벤트 등록 using on() method
+        //    $("button.btn2").on("click", function() {
+        //         console.debug("button2, clicked..")
+        //    })
+
+            //2가지 이상의 이벤트를 한꺼번에 설정 => 그룹 이벤트 등록
+            // $("button.btn2").on("click mouseover", function (e) {
+            //     console.log(`e.type: ${e.type}`);
+
+            //     if(e.type == "click") {
+            //         console.log("1. onclick...")
+            //     } else if(e.type == "mouseover") {
+            //         console.log("2. onmouseover...")
+            //     }   //다중 if문
+            // });  //onclick, onmouseover
+
+            // $("button.btn2").on({
+            //     "click" : function () {
+            //         console.log('onclick');
+            //     },  //onclick
+            //     "mouseover" : function () {
+            //         console.log('mouseover');
+            //     }   //onmouseover
+            // });
+
+            $("button.btn2").on({
+                click : function () {
+                    console.log('1. onclick');
+                },  //onclick
+                mouseover: function () {
+                    console.log('2. onmouseover');
+                }, //onmouseover
+                mousemove: function () {
+                    console.log('3. onmousemove');
+                }, //onmousemove
+                mouseout: function () {
+                    console.log('4. onmouseout');
+                }  //onmouseout
+            }); //on
+
+
+        // 연관배열을 이용한 "그룹"이벤트 등록, 이벤트별 처리를 다르게 지정
+            // $(".btn2").on({
+            //     //onmouseover, onfocus
+            //     "mouseover focus": function (e) {
+            //         console.debug('onmouseover or onfocus');
+                    
+            //         $(e.currentTarget).
+            //             parent().
+            //             next().
+            //             css({"color": "#0f0"});
+            //     },
+
+            //     //onmouseout, onblur
+            //     "mouseout blur": function (e) {
+            //         console.debug('mouseout or blur');
+
+            //         $(e.currentTarget).
+            //             parent().
+            //             next().
+            //             css({"color": "#000"});
+            //     }
+            // });  //on
+        }); //.jq
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1">버튼1</button>
+    </p>
+
+    <p>내용1</p>
+
+    <!-- --------------------- -->
+
+    <p>
+        <button class="btn2">버튼2</button>
+    </p>
+
+    <p>내용2</p>
+</body>
+</html>

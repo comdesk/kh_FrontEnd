@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        //DOM + All resources files downloaded
+        // $(window).load(function () {     //When DOM + All resources downloaded.
+        // $(document).ready(function () {  //When DOM completed.
+        $(function () {
+            console.clear();
+            console.debug('onload...');
+
+            var h2 = $(".img1").height();
+            console.log("load: ", h2);
+
+            // $('.img1').width(50).height(50);
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <!-- <img src="http://place-hold.it/100X100" class="img1"> -->
+        <img src="https://picsum.photos/100/100" class="img1">
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+    
+    <title>Document</title>
+</head>
+<body>
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
+
+    <script>
+        const obj = { //이 객체는 속성은 없고, 메소드 3개만 선언됨(by using Anonymous Function)
+            m1: function () {
+                return "Hello Sonata";
+            },
+            m2: function (a) {
+                let result = a;
+                return result;
+            },
+            m3: function (a, b) {
+                let result = a + b;
+                return result;
+            }
+        };  //객체 리터럴 방식으로 만든 사용자 정의 객체 (1회성 - 재사용 불가)
+    
+        document.querySelector("#msg1").innerHTML = obj.m1();
+        document.querySelector("#msg2").innerHTML = obj.m2(100);
+        document.querySelector("#msg3").innerHTML = obj.m3(100, 200);
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+</head>
+<body>
+     <script>
+        var x = 0;
+        var sum = 0;
+
+        // while(true) {    in Java
+        while(1) {      //무한루프 (truthy 이 값만큼 반복하란 뜻 아님.) 
+            if(x > 100) {   //탈출조건: 0<=x<=100
+                break;
+            } //if
+
+            if(x%3 == 0) {
+                sum += x;
+                document.write(`${x} `);
+            }
+
+            x += 3;     //3의 배수
+        } //while
+
+        document.write("<!DOCTYPE html>");
+        document.write("<p/>");
+        document.write(`1~100까지 수 중 3의 배수 합: <b>${sum}</b>`);
+     </script>
+</body>
+</html>

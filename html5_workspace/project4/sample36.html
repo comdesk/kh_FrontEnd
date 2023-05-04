@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(() => {
+            console.clear();
+
+            //appendXXX(), prepandXXX() 메소드 모두
+            //선택한 요소노드의 자식으로 넣되,
+            //각자 막내로 또는 첫째로 추가하라!는 메소드임
+            $("<li>appendTo</li>").appendTo("#listZone");
+            // $("#listZone").prepend("<li>prepend</li>");
+            $("<li>prependTo</li>").prependTo("#listZone");
+        });
+    </script>
+</head>
+
+<body>
+    <ul id="listZone">
+        <li>리스트</li>
+    </ul>
+</body>
+
+</html>

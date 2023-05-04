@@ -1,0 +1,23 @@
+@charset "utf-8";   /*CSS Rule*/
+
+body > div > h3 {
+    color: red;
+}
+
+body > p {
+    color: green;
+    background-color: yellow;
+}
+
+/* body home */
+body > h3 > tel > home {
+    color: blue;
+}
+
+sno {
+    display: block;
+    box-sizing: border-box;
+    width: 200px;
+    height: 100px;
+    border: 5px solid purple;
+}

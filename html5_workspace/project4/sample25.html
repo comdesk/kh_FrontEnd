@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(() => {
+            console.clear();
+
+            const arr1 = ["서울", "대전", "부산", "전주"];
+
+            const arr2 = ["한국", "미국", "일본", "중국"];
+
+            // $.inArray<string>(
+                // value: string, 
+                // array: string[], 
+                // fromIndex?: number): number
+            var idxNum = $.inArray("부산", arr1);
+            console.log(`1. idxNum: ${idxNum}`);
+
+            let okArray1 = $.isArray(arr1);
+            console.log(`2. okArray1: ${okArray1}`);
+
+            let okArray2 = $.isArray({});
+            console.log(`3. okArray2: ${okArray2}`);
+
+            console.log(`4. Array.isArray(arr1): ${Array.isArray(arr1)}`);
+            
+            //인자로 준 여러 배열을 하나로 합쳐서 *새로운* 배열로 반환
+            //arr2에 arr1이 합쳐짐.
+            $.merge(arr2, arr1);
+            console.log("5. arr2:", arr2);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

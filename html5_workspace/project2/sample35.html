@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/sample35.css">
+</head>
+
+<body>
+    <p>이미지가 박스 영역을 벗어남</p>
+
+    <div>
+        <img class="img1" src="https://picsum.photos/id/1025/140/140" alt="image">
+        이미지가 오른쪽 정렬로 되어 있는데, 박스 영역을 벗어났다.
+    </div>
+
+    <p style="clear:right">overflow: auto; 속성을 사용하여 해결</p>
+
+    <div class="fix">
+        <img class="img2" src="https://picsum.photos/id/1025/140/140" alt="img">
+        Lorem, ipsum dolor sit amet consectetur adipisicing.
+    </div>
+</body>
+
+</html>

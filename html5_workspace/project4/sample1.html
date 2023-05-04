@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 연동방식 - 2가지: 다운로드, CDN</title>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        //jQuery Startup Code #1
+        $(document).ready(function () {         //돔트리가 다 준비되면,
+            console.log('jq1 started....')
+
+            //여기서 jQuery 코드를 개발
+            
+        });     //onready
+
+        //거의 쓰지 않는 jQuery Startup Code
+        //jQuery Startup Code #2
+        $(window).load(function () {
+            console.log('jq2 started...');
+
+            //여기서 jQuery 코드를 개발
+
+        });
+
+        //가장 많이 사용하는 jQuery Startup Code(콜백함수만 호출) = #1
+        //jQuery Startup Code #3
+        $(function () {
+            console.log('jq3 started...');
+            console.log('\t1. this: ', this);
+
+
+
+        }); //.jq
+
+        //Callback function => Arrow Function
+        //jQuery Startup Code #4
+        $(() => {
+            console.log('jq4 started...');
+            console.log('\t2. this: ', this);
+
+
+
+        }); //.jq
+    </script>
+</head>
+
+<body>
+    <img src="https://picsum.photos/id/1025/600/400" alt="">
+</body>
+
+</html>

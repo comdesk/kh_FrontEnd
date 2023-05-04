@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 내부(internal) 스타일 시트 -->
+    <style>
+        p {
+            color: blue;
+        }
+
+        p {
+            color: yellow;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/sample2.css">
+</head>
+
+<body>
+    <!-- vh: Viewport Height, vw: Viewport Width -->
+    <!-- * Block-level Element의 특징 #2:
+    가. Block-level 요소는 같은 Block-level 요소 + Inline-level 요소 포함 가능 -->
+    <div id="wrapper" style="width: 1440px;">
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+
+</html>

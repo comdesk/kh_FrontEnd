@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES5(표준화 전): 변수 선언 및 초기화 (정의)
+        // var text1 = "함수 선언 전 호출 에러";
+        // var text2 = "함수 선언 후 호출만 가능";
+
+        //ES6: const 변수와 let 변수(=블록변수)가 새로이 등장
+        //(1) const 변수(=상수)
+        //  ex. java => private final String name = "Yoseph";
+        //  ex. JS => const 상수명 = 초기값;,
+
+        const text1 = "함수 선언 전 호출 에러";
+        const text2 = "함수 선언 후 호출만 가능";
+
+        //함수표현식으로, 함수를 변수에 저장하면, 함수는 오로지
+        //변수를 통해서만 호출가능해진다(함수명이 있든 없든). 이때에는, 함수 호이스팅이 발생하지 않는다.
+        //때문에, 함수 선언 전 호출은 불가하다. (***)
+        // printMsg(text1);        //함수 선언 전 호출 -- XX
+
+        var printMsg = function fn(msg) {   //함수 객체 선언(함수 객체가 들어간 거지 함수가 선언된 게 아님 => 호이스팅x)
+            console.debug(`printMsg(${msg}) invoked.`);
+
+            let blockVar = 100;     //지역변수(block의 종류를 따지지 않고)
+
+            console.log(`\t+ blockVar: ${blockVar}`);
+        };  //함수의 1급 객체의 성질을 보여줌: 함수는 변수에 대입 가능하다.
+
+        //ES6: Arrow function을 이용하여 익명함수 생성 및 변수에 대입
+        // var printMsg = msg => console.debug(`printMsg(${msg}) invoked.`);    //익명함수
+        // console.log('>>> printMsg:', printMsg);
+
+        printMsg(text2);    //함수 선언 후 호출 가능
+
+        // console.log(`>>> blockVar after invoking function: ${blockVar}`);
+
+        //f(text2);     //xx: 함수이름을 호출
+    </script>
+</body>
+</html>
